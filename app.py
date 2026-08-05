@@ -12,4 +12,14 @@ client = InferanceClient(
   api_key=os.enveron["HF_TOKEN"],
 )
 
-completion = client.chat.completions.create(model="meta-lama/Llama-3.1-8B-Instruct:novita",
+completion = client.chat.completions.create(
+  model="meta-lama/Llama-3.1-8B-Instruct:novita",
+  messaages=[
+    {
+        "role":"user",
+        "content": "waht is capital of France?"
+    }
+  ],
+)
+print(completion.choices[0].message)
+                                            
